@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         },
         concat: {
             kartofan: {
-                src: ['./js/kartofan/**/*.js', '!./js/kartofan/kartofan.gen.js'],
+                src: ['./js/**/*.js', '!./js/kartofan.gen.js'],
                 dest: './js/kartofan.gen.js'
             }
         },
