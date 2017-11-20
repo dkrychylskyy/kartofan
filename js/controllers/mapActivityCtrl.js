@@ -1,3 +1,3 @@
-cartofan.controller('mapActivityCtrl', function mapActivityCtrl() {
+kartofan.controller('mapActivityCtrl', function mapActivityCtrl() {
     
 })
