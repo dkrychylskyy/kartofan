@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
+    <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <title>Map Activity</title>
 </head>
-<body>
-    
+
+<body ng-app="kartofan">
+    <div id="map" ng-controller="mapActivityCtrl as mapCtrl">
+        <ng-map center="[43.643852, 1.386898]"></ng-map>
+        <div>
+            {{mapCtrl.message}}
+        </div>
+    </div>
 </body>
+
 </html>

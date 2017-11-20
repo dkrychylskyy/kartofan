@@ -1,2 +1,2 @@
 
-var kartofan = angular.module('kartofan', []);
+var kartofan = angular.module('kartofan', ['ngMap']);
