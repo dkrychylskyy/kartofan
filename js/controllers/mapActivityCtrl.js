@@ -1,4 +1,5 @@
 kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap) {
+    'use strict';
     var mapCenter = [43.643719, 1.388390];
     var vm = this;
     NgMap.getMap().then(function (map) {
