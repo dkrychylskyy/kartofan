@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -7,6 +7,18 @@ kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     });
 }]);
 
+kartofan.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+      templateUrl : "index.html"
+    })
+    .when("/subscribe", {
+      templateUrl : "../html/subscribe.html"
+    })
+    .otherwise("/");
+    }
+  );
+  
 kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', function ($scope, GooglePlus) {
     $scope.login = function () {
         GooglePlus.login().then(function (authResult) {

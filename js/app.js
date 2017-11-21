@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -6,3 +6,16 @@ kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
        apiKey: 'AIzaSyCyoG1LdKWgZ2Ki4Hhye9aUhLL-vqK3hw4'
     });
 }]);
+
+kartofan.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+      templateUrl : "index.html"
+    })
+    .when("/subscribe", {
+      templateUrl : "../html/subscribe.html"
+    })
+    .otherwise("/");
+    }
+  );
+  
