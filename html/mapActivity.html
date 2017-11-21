@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyA5lsFrqlHJmgACBlD0tTr-FWl-EjVhF6g"></script>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"> -->
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
+    <script src="../node_modules/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="../node_modules/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="../node_modules/angular-strap/dist/angular-strap.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <title>Map Activity</title>
 </head>
@@ -16,15 +20,17 @@
 <body ng-app="kartofan">
     <div id="map" ng-controller="mapActivityCtrl as vm">
         <ng-map center="{{vm.center}}" zoom="{{vm.zoom}}" default-style="true">
-            <custom-marker name="currnetPosition" position="{{vm.currentPosition.position}}">
+            <custom-marker name="home" position="{{vm.currentPosition.position}}">
                 <div>
                     <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
                     </button>
                     <!-- On peut ajouter une lien vers page du comte d'utilisateur-->
                 </div>
             </custom-marker>
+            <marker ng-repeat="p in vm.markers track by $index" position="{{p.position}}" icon="{{vm.icon[$index]}}" title="{{p.titre}}, {{p.prix}}" on-mouseover="vm.mouseover()"></marker>
         </ng-map>
+        <span ng-repeat="p in vm.markers">{{p}}</span>
     </div>
 </body>
 

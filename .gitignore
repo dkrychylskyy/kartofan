@@ -1,1 +1,2 @@
-*.gen.js
+js/*.gen.js
+/js/*.gen.js
