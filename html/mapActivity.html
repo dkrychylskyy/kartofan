@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA5lsFrqlHJmgACBlD0tTr-FWl-EjVhF6g"></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
@@ -13,11 +13,15 @@
 </head>
 
 <body ng-app="kartofan">
-    <div id="map" ng-controller="mapActivityCtrl as mapCtrl">
-        <ng-map center="[43.643852, 1.386898]"></ng-map>
-        <div>
-            {{mapCtrl.message}}
-        </div>
+    <div id="map" ng-controller="mapActivityCtrl as vm">
+        <ng-map center="{{vm.center}}" zoom="{{vm.zoom}}" default-style="true">
+            <custom-marker name="currnetPosition" position="{{vm.currentPosition.position}}">
+                <div>
+                    <b>Home</b>
+                    <!-- On peut ajouter une lien vers page du comte d'utilisateur-->
+                </div>
+            </custom-marker>
+        </ng-map>
     </div>
 </body>
 

@@ -1,10 +1,25 @@
 kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap) {
-
-    var API_KEY =  "AIzaSyA5lsFrqlHJmgACBlD0tTr-FWl-EjVhF6g";
-
-    NgMap.getMap().then(function(map) {
+    var mapCenter = [43.643719, 1.388390];
+    var vm = this;
+    NgMap.getMap().then(function (map) {
         console.log("map center : " + map.getCenter());
         console.log('markers', map.markers);
         console.log('shapes', map.shapes);
-      });
+        console.log('style', map.style);
+    });
+    
+    /* Centre de la map */
+    vm.center = mapCenter;
+    /* Zoom de depart */
+    vm.zoom = 13;
+    
+    /* 
+    * MARQUES 
+    */
+    /* Maque centrale */
+    vm.currentPosition = {
+        position: mapCenter,
+    };
+
+
 });
