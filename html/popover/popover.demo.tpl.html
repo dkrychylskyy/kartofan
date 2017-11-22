@@ -1,0 +1,15 @@
+<div class="popover" tabindex="-1">
+    <img src="{{p.img}}" alt="{{p.titre}}"></img>
+    <div class="caption">
+      <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
+      <div class="popover-content" ng-bind="content">
+      </div>
+      <form id="">
+        
+      </form>
+      <div class="form-action">
+        <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="popover.saved=true;$hide()">Save changes</button>
+      </div>
+    </div>
+</div>
