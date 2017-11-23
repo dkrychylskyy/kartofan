@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute', 'mgcrea.ngStrap', 'ngAnimate']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -18,4 +18,10 @@ kartofan.config(function($routeProvider) {
     .otherwise("/");
     }
   );
+
+kartofan.config(function($popoverProvider) {
+    angular.extend($popoverProvider.defaults, {
+      html: true
+    });
+  });
   

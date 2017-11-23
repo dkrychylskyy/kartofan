@@ -41,3 +41,22 @@ body {
   }
   
   /* END */
+
+  /* Map */
+  .container{
+    min-height: 300px;
+    height: 600px;
+  }
+
+  #map, #ngmap{
+    min-height: 300px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  /* END */
+
+  /* Popover */
+  .form-action{
+    margin: 0.5em;
+  }
+  /* END */
