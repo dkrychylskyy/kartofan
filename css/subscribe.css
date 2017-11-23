@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+/* Space out content a bit */
+body {
+  background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2014/11/16/517667/big_thumb_f8ae54ac99c0695e0caa4553a9c04537.jpg);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: rgba(0,0,0,.6);  /*Tint color*/
+  background-blend-mode: multiply;  
+}
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+ Custom page header 
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+
+  h1
+   {
+    text-align: center;
+    color: #fff;
+  }
+
+  #my-form-element .form-group .form-control{
+    background: none;
+    height: 44px;
+    color: #ddd;
+    color: #fff;
+  }
+
+  label {
+    color: #fff;
+    font-weight: normal;
+  }
+
+  button {
+    background: #1b5a7c;
+    border-color: #1b5a7c;
+    color: #fff;
+    width: 190px;
+}
+
+a {
+  color: #ffffff;
+}
+
+a:hover, a:focus {
+  color: #ffffff;
+}
+
+.btn{
+  background: #1b5a7c;
+  border-color: #1b5a7c;
+  color: #fff;
+  width: 180px;
+}
+
+.btn:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.btn:focus {
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: #1b5a7c;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(24, 204, 162, 0.6);
+  outline: 0 none;
+}

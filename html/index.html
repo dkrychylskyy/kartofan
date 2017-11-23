@@ -1,35 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1012913286363-n94npc63kf6gqvepbinl0v8lhb8mbqiu.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
-    <title>Kartofan</title>
+    <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+
+    <title>Document</title>
 </head>
 
-<body ng-app="kartofan">
-    <div class="container">
+<body ng-app="kartofan" class="main" ng-view>
+    <div class="login-screen"></div>
+    <div class="login-center">
+        <div class="container min-height" style="margin-top: 20px;">
+            <div class="row">
+                <div class="col-xs-4 col-md-offset-8">
+                    <div class="login" id="card">
+                        <div class="front signin_form">
+                            <p>Connectez-vous</p>
+                            <form class="login-form">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" placeholder="Entrez votre email">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="Entrez votre mot de passe">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-lock"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div ng-controller="AuthCtrl">
+                                    <a href="javascript:void(0);" ng-click="login()">Connectez-vous avec Google</a>
+                                </div>
+                                 <!-- <a href="javascript:void(0);" ng-click="logout()">Déconnection</a> -->
+                                 <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">Se souvenir de moi</label>
+                                </div>
 
-        <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+                                <div class="form-group sign-btn">
+                                    <input type="submit" class="btn" value="Connexion">
+                                    <a href="#" class="forgot">Mot de passe oublié ?</a>
+                                    <br>
+                                    <strong>Nouveau sur Kartofan ?</strong>
+                                    <br>
+                                    <a href="#!subscribe" id="flip-btn" class="signup signup_link">Créer un nouveau compte</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
+        </div>
     </div>
-    <!-- /container -->
+    </div>
 </body>
 
 </html>
+

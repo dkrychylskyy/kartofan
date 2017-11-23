@@ -1,0 +1,137 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Raleway',sans-serif;
+    position: relative;
+    /*background: rgba(0, 0, 0, 0) url("../img/ptn.png") repeat scroll 0 0;*/
+}
+
+.in-page {
+    min-height: 520px;
+}
+
+.main {
+    position: relative;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover, a:focus {
+    color: #ffffff;
+}
+
+.btn-cyan {
+    background-color: #1b5a7c;
+    color: #fff;
+}
+
+.btn-cyan:hover {
+    color: #fff;
+    opacity: 0.9;
+}
+
+.form-control:focus {
+    border-color: #1b5a7c;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(24, 204, 162, 0.6);
+    outline: 0 none;
+}
+
+.min-height {
+    min-height: 380px;
+}
+
+.login-screen {
+    background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2014/11/16/517667/big_thumb_f8ae54ac99c0695e0caa4553a9c04537.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);  /*Tint color*/
+    background-blend-mode: multiply;
+}
+
+.login-center {
+    text-align: left;
+}
+
+.login {
+    width: 320px;
+    color: #fff;
+}
+
+.login .login-form {
+    text-align: left;
+}
+
+.login label {
+    color: #fff;
+}
+
+.login-form .input-group .form-control {
+    background: none;
+    height: 44px;
+    color: #ddd;
+}
+
+.login-form .input-group .input-group-addon {
+    background: none;
+}
+
+.login-form .input-group .input-group-addon .glyphicon {
+    color: #1b5a7c;
+}
+
+.login-form .input-group .form-control {
+    color: #fff;
+    /* opacity: 0.3; */
+}
+
+.login .sign-btn input.btn {
+    background: #1b5a7c;
+    border-color: #1b5a7c;
+    color: #fff;
+    width: 180px;
+}
+
+.login .sign-btn a {
+    text-decoration: none;
+}
+
+.login .checkbox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login .forgot {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+button {
+    background: #1b5a7c;
+    border-color: #1b5a7c;
+    color: #fff;
+    width: 190px;
+}
+

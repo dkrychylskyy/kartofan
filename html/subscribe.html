@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1012913286363-n94npc63kf6gqvepbinl0v8lhb8mbqiu.apps.googleusercontent.com">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/subscribe.css">    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
+    <script type="text/javascript" src="../js/kartofan.gen.js"></script>
+    <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+
+    <title>Kartofan</title>
+</head>
+
+<body ng-app="kartofan" ng-view>
+    <div class="subscribe-screen"></div>
+    <div class="container">
+            <a href="#!index">Retour</a>
+        <h1>Enregistrement</h1>
+        <div class="col-lg-12">
+            <div class="row">
+                <form id="my-form-element">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label>Prénom</label>
+                                <input type="text" placeholder="Prénom" class="form-control">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label>Nom</label>
+                                <input type="text" placeholder="Nom" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Addresse</label>
+                            <textarea placeholder="Votre adresse" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label>Département</label>
+                                <input type="text" placeholder="Votre département" class="form-control">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Ville</label>
+                                <input type="text" placeholder="Votre ville" class="form-control">
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <label>Code postal</label>
+                                <input type="text" placeholder="Votre code postal" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Numéro de téléphone</label>
+                            <input type="text" placeholder="Votre numéro de téléphone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Addresse e-mail</label>
+                            <input type="text" placeholder="Votre mail" class="form-control">
+                        </div>
+                        <button type="button" class="btn">Soumettre</button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>    
+</body>
+
+</html>
