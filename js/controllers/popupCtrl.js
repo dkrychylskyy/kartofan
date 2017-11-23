@@ -12,19 +12,27 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
         if (popup.qte == 0) {
             return;
         }
-        var entres = commande.entries();
-        var cle = commande.keys();
-        for(i=0; i<entres.length;i++) {
-            for(j=0; j<cle.length;j++){
-                if(cle[j]) {
-                    this.value-1;
-                }
+        if(titre == "prod1") {
+            if(popup.qte == 1){
+                commande.delete("prod1");
+            } else {
+                commande.set(titre, (popup.qte -1));
             }
         }
-        
-        console.log(cle);
-        
-        commande.delete();
-         popup.qte--;
+        if(titre == "prod2") {
+            if(popup.qte == 1){
+                commande.delete("prod2");
+            } else {
+                commande.set(titre, (popup.qte -1));
+            }
+        }
+        if(titre == "prod3") {
+            if(popup.qte == 1){
+                commande.delete("prod3");
+            } else {
+                commande.set(titre, (popup.qte -1));
+            }
+        } 
+         popup.qte--; 
     };
 });
