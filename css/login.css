@@ -67,9 +67,11 @@ a:hover, a:focus {
     bottom: 0;
     right: 0;
     left: 0;
+    background-color: rgba(0,0,0,.6);  /*Tint color*/
+    background-blend-mode: multiply;
 }
 
-.login-screen:before {
+/* .login-screen:before {
     content: "";
     background: rgba(0,0,0, 0.5);
     position: absolute;
@@ -77,7 +79,7 @@ a:hover, a:focus {
     height: 100%;
     top: 0;
     left: 0;
-}
+} */
 
 .login-center {
     text-align: left;

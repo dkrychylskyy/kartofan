@@ -31,10 +31,12 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', function ($scope, Googl
             console.log(err);
         });
     };
+    /*  Fonction logout non fonctionnelle
     $scope.logout = function () {
         gapi.auth.signOut();
         console.log("Déconnecté !");
-      };
+      }; */ 
+
 }]);
 
 kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap) {
