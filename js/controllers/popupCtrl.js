@@ -12,7 +12,19 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
         if (popup.qte == 0) {
             return;
         }
-        // commande.delete(titre, popup.qte);
+        var entres = commande.entries();
+        var cle = commande.keys();
+        for(i=0; i<entres.length;i++) {
+            for(j=0; j<cle.length;j++){
+                if(cle[j]) {
+                    this.value-1;
+                }
+            }
+        }
+        
+        console.log(cle);
+        
+        commande.delete();
          popup.qte--;
     };
 });
