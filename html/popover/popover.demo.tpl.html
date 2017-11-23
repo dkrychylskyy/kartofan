@@ -4,19 +4,23 @@
     <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
     <div class="popover-content" ng-bind="content">
     </div>
-    <form id="form" name="form" ng-submit="">
-      <div ng-repeat="prod in p.menu track by $index" >
-        <div ng-controller="popupCtrl as popup">{{prod.titre}} : {{prod.prix | currency:"€": 2}}
-          <input type="number" name="popup.qte" ng-model="qte" ng-hide="true" ng-value="1"></input>
-          <span>{{popup.qte}}</span>
-          <button type="button" name="plus" value="1" ng-click="popup.plus(popup.qte)">+</button>
-          <button type="button" name="plus" value="1" ng-click="popup.minus(popup.qte)">-</button>
+    <div ng-controller="commandeCtrl as commande">
+      <form id="form" name="form">
+        <div ng-repeat="prod in p.menu track by $index" ng-controller="popupCtrl as popup">
+          <div >{{prod.titre}} : {{prod.prix | currency:"€": 2}}
+            <input type="number" name="popup.qte" ng-model="qte" ng-hide="true"></input>
+            <span ng-hide="popup.qte == 0">{{popup.qte}}</span>
+            <button type="button" name="plus" ng-click="popup.plus(popup.qte)">+</button>
+            <button type="button" name="plus" ng-click="popup.minus(popup.qte)">-</button>
+            <span>{{popup.qte * prod.prix}}</span>
+          </div>
         </div>
-      </div>
-      <div class="form-action">
-        <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
-        <button type="submit" class="btn btn-primary" ng-click="popover.saved=true;$hide()">Save changes</button>
-      </div>
-    </form>
+        <div class="form-action">
+          <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
+          <!-- <button type="submit" class="btn btn-primary" ng-click="popover.saved=true;$hide()">Save changes</button> -->
+          <button type="submit" class="btn btn-primary" ng-click="commande.commander(p.titre)">Commander</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

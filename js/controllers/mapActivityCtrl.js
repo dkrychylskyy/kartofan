@@ -11,13 +11,14 @@ kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap, $modal, $
 
     /* Creation menu */
     var menu = {};
-    function Prod(titre, prix) {
+    function Prod(titre, prix, qte) {
         this.titre = titre;
         this.prix = prix;
+        this.qte = qte;
     }
-    menu.prod1 = new Prod("prod1", 10);
-    menu.prod2 = new Prod("prod2", 12);
-    menu.prod3 = new Prod("prod3", 13);
+    menu.prod1 = new Prod("prod1", 10, 0);
+    menu.prod2 = new Prod("prod2", 12, 0);
+    menu.prod3 = new Prod("prod3", 13, 0);
      /* END menu */
      
     /* Centre de la map */
@@ -58,8 +59,8 @@ kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap, $modal, $
 
 
 vm.markers.marker1 = new Restauant(1, [43.65095096, 1.38046211], "HolaPizza", "p", "../img/rest1.jpg", 10, 15, menu);
-vm.markers.marker2 = new Restauant(2, [43.63758, 1.38399315], "Le Carrelet", "r", "../img/rest2.jpg", 20, 18);
-vm.markers.marker3 = new Restauant(3, [43.64565009, 1.40561622], "La Faim des Haricots", "p", "../img/rest3.jpg", 16, 14);
+vm.markers.marker2 = new Restauant(2, [43.63758, 1.38399315], "Le Carrelet", "r", "../img/rest2.jpg", 20, 18, menu);
+vm.markers.marker3 = new Restauant(3, [43.64565009, 1.40561622], "La Faim des Haricots", "p", "../img/rest3.jpg", 16, 14, menu);
 vm.markers.marker4 = new Restauant(4, [43.64232286, 1.36425325], "La Faim des Haricots", "r", "../img/rest4.jpg", 13, 8, menu);
 vm.markers.marker5 = new Restauant(5, [43.64679373, 1.38189499], "La Faim des Haricots", "p", "../img/rest5.jpg", 8, 20);
 vm.markers.marker6 = new Restauant(6, [43.64853678, 1.39066706], "La Faim des Haricots", "r", "../img/rest6.jpg", 10, 14);
