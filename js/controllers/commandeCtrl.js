@@ -1,8 +1,11 @@
-kartofan.controller('commandeCtrl', function commandeCtrl() {
-    commande = this;
-    commande.commande = {};
+kartofan.controller('commandeCtrl', function commandeCtrl($scope) {
+    commCtrl = this;
+    commCtrl.commande = new Map();
+    // commCtrl.commande.line = {};
 
-    commande.commander = function(param1, param2) {
-        console.log(param1, param2);
+    commCtrl.commander = function(params) {
+        commCtrl.commande = params;
+        console.log(commCtrl.commande);
+        return commCtrl.commande;
     };
 });
