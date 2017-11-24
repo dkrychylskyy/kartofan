@@ -26,4 +26,5 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
         }
         popup.qte--;
     };
+
 });
