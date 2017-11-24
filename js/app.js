@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute', 'mgcrea.ngStrap', 'ngAnimate']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -23,5 +23,11 @@ kartofan.config(function($popoverProvider) {
     angular.extend($popoverProvider.defaults, {
       html: true
     });
+  });
+
+  kartofan.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('kartofan')
+      .setNotify(true, true);
   });
   
