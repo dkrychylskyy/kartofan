@@ -24,7 +24,7 @@
 
 <body ng-app="kartofan" ng-view>
     <div class="subscribe-screen"></div>
-    <div class="container">
+    <div class="container" ng-controller="subscribeCtrl as subscribe">
             <a href="#!index">Retour</a>
         <h1>Enregistrement</h1>
         <div class="col-lg-12">
@@ -34,40 +34,40 @@
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <label>Prénom</label>
-                                <input type="text" placeholder="Prénom" class="form-control">
+                                <input type="text" placeholder="Prénom" class="form-control" ng-model="subscribe.prenom">
                             </div>
                             <div class="col-sm-6 form-group">
                                 <label>Nom</label>
-                                <input type="text" placeholder="Nom" class="form-control">
+                                <input type="text" placeholder="Nom" class="form-control" ng-model="subscribe.nom">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Addresse</label>
-                            <textarea placeholder="Votre adresse" rows="3" class="form-control"></textarea>
+                            <textarea placeholder="Votre adresse" rows="3" class="form-control" ng-model="subscribe.adresse"></textarea>
                         </div>
                         <div class="row">
                             <div class="col-sm-4 form-group">
                                 <label>Département</label>
-                                <input type="text" placeholder="Votre département" class="form-control">
+                                <input type="text" placeholder="Votre département" class="form-control" ng-model="subscribe.departement">
                             </div>
                             <div class="col-sm-4 form-group">
                                 <label>Ville</label>
-                                <input type="text" placeholder="Votre ville" class="form-control">
+                                <input type="text" placeholder="Votre ville" class="form-control" ng-model="subscribe.ville">
                             </div>
                             <div class="col-sm-4 form-group">
                                 <label>Code postal</label>
-                                <input type="text" placeholder="Votre code postal" class="form-control">
+                                <input type="text" placeholder="Votre code postal" class="form-control" ng-model="subscribe.cp">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Numéro de téléphone</label>
-                            <input type="text" placeholder="Votre numéro de téléphone" class="form-control">
+                            <input type="text" placeholder="Votre numéro de téléphone" class="form-control" ng-model="subscribe.tel">
                         </div>
                         <div class="form-group">
                             <label>Addresse e-mail</label>
-                            <input type="text" placeholder="Votre mail" class="form-control">
+                            <input type="text" placeholder="Votre mail" class="form-control" ng-model="subscribe.email">
                         </div>
-                        <button type="button" class="btn">Soumettre</button>
+                        <button type="submit" class="btn" ng-click="subscribe.addUser()">Soumettre</button>
                         <br>
                     </div>
                 </form>

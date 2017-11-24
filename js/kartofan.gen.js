@@ -134,19 +134,33 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
 
     popup.plus = function (commande, titre, prix) {
         popup.qte++;
-        commande.set(titre, popup.qte);
+        var qte = popup.qte;
+        var obj = {};
+        obj.qte = qte;
+        obj.prix = prix;
+        commande.set(titre, obj);
         console.log(commande);
     };
 
     popup.minus = function (commande, titre, prix) {
+        var qte = popup.qte;
+        var obj = {};
+        obj.qte = qte-1;
+        obj.prix = prix;
         if (popup.qte == 0) {
             return;
         }
         if (popup.qte == 1) {
-            commande.delete(titre, popup.qte);
+            commande.delete(titre, obj);
         } else {
-            commande.set(titre, (popup.qte - 1));
+            commande.set(titre, obj);
         }
         popup.qte--;
     };
+});
+kartofan.controller('subscribeCtrl', function subscribeCtrl() {
+    sub = this;
+    sub.addUser = function () { 
+        console.log(sub.nom);
+     };
 });
