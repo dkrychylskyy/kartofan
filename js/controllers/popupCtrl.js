@@ -2,7 +2,6 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
     var popup = this;
     popup.qte = 0;
 
-
     popup.plus = function (commande, titre, prix) {
         popup.qte++;
         var qte = popup.qte;
