@@ -69,4 +69,5 @@ vm.markers.marker8 = new Restauant(8, [43.64537062, 1.40376446], "La Faim des Ha
 vm.markers.marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Haricots", "r", "../img/rest9.jpg", 5, 24);
 vm.markers.marker10 = new Restauant(10, [43.62853439, 1.38851422], "La Faim des Haricots", "p", "../img/rest10.jpg", 10, 15);
 
+
 });
