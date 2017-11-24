@@ -28,6 +28,12 @@ kartofan.config(function($popoverProvider) {
     });
   });
 
+  kartofan.config(function($modalProvider) {
+    angular.extend($modalProvider.defaults, {
+      animation: 'am-flip-x'
+    });
+  });
+
   kartofan.config(function (localStorageServiceProvider) {
     localStorageServiceProvider
       .setPrefix('kartofan')

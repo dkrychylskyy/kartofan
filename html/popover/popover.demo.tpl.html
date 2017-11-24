@@ -7,7 +7,8 @@
     <div ng-controller="commandeCtrl as commande">
       <form id="form" name="form">
         <div ng-repeat="prod in marker.menu track by $index" ng-controller="popupCtrl as popup">
-          <div >{{prod.titre}} : {{prod.prix | currency:"€": 2}}
+          <div>
+            {{prod.titre}} : {{prod.prix | currency:"€": 2}}
             <input type="number" name="popup.qte" ng-model="qte" ng-hide="true"></input>
             <span ng-hide="popup.qte == 0">{{popup.qte}}</span>
             <button type="button" name="plus" ng-click="popup.plus(commande.commande, prod.titre, prod.prix)">+</button>
