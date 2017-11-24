@@ -15,6 +15,9 @@ kartofan.config(function($routeProvider) {
     .when("/subscribe", {
       templateUrl : "../html/subscribe.html"
     })
+    .when("/mapactivity", {
+      templateUrl : "../html/mapactivity.html"
+    })
     .otherwise("/");
     }
   );
