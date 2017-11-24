@@ -1,0 +1,56 @@
+body {
+/*     background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2014/11/16/517667/big_thumb_f8ae54ac99c0695e0caa4553a9c04537.jpg);
+ *    padding-top: 20px;
+    padding-bottom: 20px;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(0,0,0,.6);  /*Tint color*
+    background-blend-mode: multiply; */
+    font-family: 'Raleway',sans-serif; 
+  }
+
+  .brand {
+      font-weight: normal;
+      color: #fff;
+  }
+
+  .jumbotron-billboard .img {
+    margin-bottom: 0px;
+    opacity: 0.8;
+    color: #fff;
+    background-color: rgba(0,0,0,.8);  /*Tint color*/
+    background: #000 url("https://www.wallpaperup.com/uploads/wallpapers/2014/11/16/517667/big_thumb_f8ae54ac99c0695e0caa4553a9c04537.jpg") center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.jumbotron h2 {margin-top:0;}
+.jumbotron {
+  position:relative;
+  padding-top:50px;
+  padding-bottom:50px;
+  color: #fff;
+}
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+}
+
+.h2 {
+    font-weight: normal;
+    text-decoration: underline;
+}
