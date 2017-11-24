@@ -1,24 +1,24 @@
 <div class="popover" tabindex="-1">
-  <img src="{{p.img}}" alt="{{p.titre}}"></img>
+  <img src="{{marker.img}}" alt="{{marker.titre}}"></img>
   <div class="caption">
     <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
     <div class="popover-content" ng-bind="content">
     </div>
     <div ng-controller="commandeCtrl as commande">
       <form id="form" name="form">
-        <div ng-repeat="prod in p.menu track by $index" ng-controller="popupCtrl as popup">
+        <div ng-repeat="prod in marker.menu track by $index" ng-controller="popupCtrl as popup">
           <div >{{prod.titre}} : {{prod.prix | currency:"€": 2}}
             <input type="number" name="popup.qte" ng-model="qte" ng-hide="true"></input>
             <span ng-hide="popup.qte == 0">{{popup.qte}}</span>
-            <button type="button" name="plus" ng-click="popup.plus(popup.qte)">+</button>
-            <button type="button" name="plus" ng-click="popup.minus(popup.qte)">-</button>
+            <button type="button" name="plus" ng-click="popup.plus(commande.commande, prod.titre, prod.prix)">+</button>
+            <button type="button" name="plus" ng-click="popup.minus(commande.commande, prod.titre, prod.prix)">-</button>
             <span>{{popup.qte * prod.prix}}</span>
           </div>
         </div>
         <div class="form-action">
           <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
           <!-- <button type="submit" class="btn btn-primary" ng-click="popover.saved=true;$hide()">Save changes</button> -->
-          <button type="submit" class="btn btn-primary" ng-click="commande.commander(p.titre)">Commander</button>
+          <button type="submit" class="btn btn-primary" ng-click="commande.commander(commande.commande)">Commander</button>
         </div>
       </form>
     </div>

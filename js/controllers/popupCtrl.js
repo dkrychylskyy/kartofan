@@ -1,18 +1,30 @@
 kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $scope) {
     var popup = this;
-    popup.qteTotal = 0;
     popup.qte = 0;
 
-    popup.plus = function (qte) {
+    popup.plus = function (commande, titre, prix) {
         popup.qte++;
-        var qteTotalLoc = popup.qte;
-        popup.qteTotal = qteTotalLoc;
-        console.log(popup.prix);
+        var qte = popup.qte;
+        var obj = {};
+        obj.qte = qte;
+        obj.prix = prix;
+        commande.set(titre, obj);
+        console.log(commande);
     };
-    popup.minus = function (qte) {
-        if(popup.qte == 0){
-            return; 
+
+    popup.minus = function (commande, titre, prix) {
+        var qte = popup.qte;
+        var obj = {};
+        obj.qte = qte-1;
+        obj.prix = prix;
+        if (popup.qte == 0) {
+            return;
         }
-        return popup.qte--;
+        if (popup.qte == 1) {
+            commande.delete(titre, obj);
+        } else {
+            commande.set(titre, obj);
+        }
+        popup.qte--;
     };
 });
