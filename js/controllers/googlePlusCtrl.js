@@ -1,19 +1,18 @@
-kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', function ($scope, GooglePlus) {
+kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', function ($scope, GooglePlus,localStorageService) {
     $scope.login = function () {
         GooglePlus.login().then(function (authResult) {
             console.log(authResult);
  
             GooglePlus.getUser().then(function (user) {
                 console.log(user);
+                localStorageService.set(user.id, user);
+                
             });
         }, function (err) {
             console.log(err);
         });
     };
-    /*  Fonction logout non fonctionnelle
-    $scope.logout = function () {
-        gapi.auth.signOut();
-        console.log("Déconnecté !");
-      }; */ 
+
+    
 
 }]);
