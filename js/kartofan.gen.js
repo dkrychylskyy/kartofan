@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute', 'mgcrea.ngStrap', 'ngAnimate']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'ngRoute', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -24,15 +24,28 @@ kartofan.config(function($popoverProvider) {
       html: true
     });
   });
+
+  kartofan.config(function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('kartofan')
+      .setNotify(true, true);
+  });
   
-kartofan.controller('commandeCtrl', function commandeCtrl($scope) {
+kartofan.controller('commandeCtrl', function commandeCtrl($scope, localStorageService) {
     commCtrl = this;
     commCtrl.commande = new Map();
     // commCtrl.commande.line = {};
 
-    commCtrl.commander = function(params) {
-        commCtrl.commande = params;
+    function addCommandeInLocalStorege(commande) {
+        if(localStorageService.isSupported) {
+            localStorageService.setPrefix('commande');
+          }
+    }
+
+    commCtrl.commander = function(commande) {
+        commCtrl.commande = commande;
         console.log(commCtrl.commande);
+        addCommandeInLocalStorege();
         return commCtrl.commande;
     };
 });
@@ -128,9 +141,10 @@ vm.markers.marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Ha
 vm.markers.marker10 = new Restauant(10, [43.62853439, 1.38851422], "La Faim des Haricots", "p", "../img/rest10.jpg", 10, 15);
 
 });
-kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $scope) {
+kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $scope, localStorageService) {
     var popup = this;
     popup.qte = 0;
+
 
     popup.plus = function (commande, titre, prix) {
         popup.qte++;

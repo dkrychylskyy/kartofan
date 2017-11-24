@@ -1,6 +1,7 @@
-kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $scope) {
+kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $scope, localStorageService) {
     var popup = this;
     popup.qte = 0;
+
 
     popup.plus = function (commande, titre, prix) {
         popup.qte++;
