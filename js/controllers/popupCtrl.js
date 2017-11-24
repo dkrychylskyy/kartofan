@@ -10,7 +10,6 @@ kartofan.controller('popupCtrl', function popupCtrl(NgMap, $modal, $popover, $sc
         obj.qte = qte;
         obj.prix = prix;
         commande.set(titre, obj);
-        console.log(commande);
     };
 
     popup.minus = function (commande, titre, prix) {
