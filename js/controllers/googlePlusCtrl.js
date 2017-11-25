@@ -13,6 +13,17 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 
         });
     };
 
+    var email = document.getElementById("emailfield").value;
+    var password = document.getElementById("passwordfield").value;
+    db.createIndex({
+        index: {fields: ['_id']}
+      });
     
+    var test = db.find({
+        selector: {
+          _id: 'henoc.nzuzi@gmail.com'
+        }
+      });
+    console.log(test);
 
 }]);

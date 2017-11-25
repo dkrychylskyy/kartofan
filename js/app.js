@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule']);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule'/* , 'pouchdb' */]);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({

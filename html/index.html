@@ -8,9 +8,10 @@
     <meta name="google-signin-client_id" content="1012913286363-n94npc63kf6gqvepbinl0v8lhb8mbqiu.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
-    <script src="../node_modules/pouchdb/dist/pouchdb.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.find.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
@@ -35,7 +36,7 @@
                             <form class="login-form">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="email" class="form-control" placeholder="Entrez votre email">
+                                        <input id="emailfield" type="email" class="form-control" placeholder="Entrez votre email">
                                         <span class="input-group-addon">
                                             <i class="glyphicon glyphicon-user"></i>
                                         </span>
@@ -43,7 +44,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" class="form-control" placeholder="Entrez votre mot de passe">
+                                        <input id="passwordfield" type="password" class="form-control" placeholder="Entrez votre mot de passe">
                                         <span class="input-group-addon">
                                             <i class="glyphicon glyphicon-lock"></i>
                                         </span>

@@ -15,12 +15,23 @@ kartofan.controller('subscribeCtrl', function subscribeCtrl(localStorageService)
         };
         newUser = Object.create(User);
         newUser.init(sub.prenom, sub.nom, sub.adresse, sub.tel, sub.ville, sub.cp, sub.password, sub.email);
-        function genIdUniq() {
+        var newUserDatabase = {
+            "_id" : sub.email,
+            "prenom" : sub.prenom,
+            "nom" : sub.nom,
+            "adresse" : sub.adresse,
+            "tel" : sub.tel,
+            "ville" : sub.ville,
+            "Code postal" : sub.cp,
+            "Mot de passe" : sub.password
+        };
+        db.put(newUserDatabase);
+        /* function genIdUniq() {
             var date = new Date();
             var id = date.valueOf();
             return id;
         }
-        localStorageService.set(genIdUniq(), newUser);
+        localStorageService.set(genIdUniq(), newUser); */
         window.location.assign("index.html");
     };
 });
