@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="../css/subscribe.css">    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.find.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <!-- <script src="../node_modules/angular-route/angular-route.js"></script> -->
     <script src="../node_modules/angular-strap/dist/angular-strap.min.js"></script>
     <script src="../node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
@@ -23,10 +25,9 @@
     <title>Kartofan</title>
 </head>
 
-<body ng-app="kartofan" ng-view>
+<body ng-app="kartofan">
     <div class="subscribe-screen"></div>
     <div class="container" ng-controller="subscribeCtrl as subscribe">
-            <a href="#!index">Retour</a>
         <h1>Enregistrement</h1>
         <div class="col-lg-12">
             <div class="row">
@@ -68,7 +69,7 @@
                             <label>Addresse e-mail</label>
                             <input type="email" placeholder="Votre mail" class="form-control" ng-model="subscribe.email">
                         </div>
-                        <button type="submit" class="btn" ng-click="subscribe.addUser()">Soumettre</button>
+                        <button type="submit" class="btn btn-primary" ng-click="subscribe.addUser()">Soumettre</button>
                         <br>
                     </div>
                 </form>
