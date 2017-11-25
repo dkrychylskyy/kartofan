@@ -21,5 +21,6 @@ kartofan.controller('subscribeCtrl', function subscribeCtrl(localStorageService)
             return id;
         }
         localStorageService.set(genIdUniq(), newUser);
+        window.location.assign("index.html");
     };
 });

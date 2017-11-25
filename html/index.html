@@ -8,12 +8,13 @@
     <meta name="google-signin-client_id" content="1012913286363-n94npc63kf6gqvepbinl0v8lhb8mbqiu.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script src="../node_modules/pouchdb/dist/pouchdb.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <!-- <script src="../node_modules/angular-route/angular-route.js"></script> -->
     <script src="../node_modules/angular-strap/dist/angular-strap.min.js"></script>
     <script src="../node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
@@ -22,7 +23,7 @@
 
 </head>
 
-<body ng-app="kartofan" class="main" ng-view>
+<body ng-app="kartofan" class="main">
     <div class="login-screen"></div>
     <div class="login-center">
         <div class="container min-height" style="margin-top: 20px;">
@@ -63,7 +64,7 @@
                                     <br>
                                     <strong>Nouveau sur Kartofan ?</strong>
                                     <br>
-                                    <a href="#!subscribe" id="flip-btn" class="signup signup_link">Créer un nouveau compte</a>
+                                    <a href="subscribe.html" id="flip-btn" class="signup signup_link">Créer un nouveau compte</a>
                                 </div>
                             </form>
                         </div>
