@@ -33,7 +33,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" ng-controller="userCtrl as user">
+        <a href="javascript:void(0);" onclick="user.info()">test</a>
         <h2 class="h2">Votre compte d'utilisateur</h2>
         <div ng-controller="commandeCtrl as commande">
             <table class="table table-hover">
@@ -41,9 +42,11 @@
                 <th>Montant HT</th>
                 <th>Montant TTC</th>
                 <th>Status</th>
-                <tr>
+                <tr id="commandes">
+                    <!-- <td></td>
                     <td></td>
                     <td></td>
+                    <td></td> -->
                 </tr>
                 
             </table>

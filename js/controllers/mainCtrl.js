@@ -20,15 +20,13 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 
     auth.connect = function() {
         var email = document.getElementById("emailfield").value;
         var password = document.getElementById("passwordfield").value;
-        var test = db.find({
+        var verifconnect = db.find({
             selector: {
                 _id: email,
                 "Mot de passe": password
             }
         }).then(function (result) {
             if (result.bookmark !== "nil") {
-                localStorageService.set(email, result);
-                console.log(currentUser.getter());
                 var redirect = "mapactivity.html#" + email;
                 window.location.href = redirect;
                 //window.location.assign("mapactivity.html");
@@ -40,6 +38,4 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 
             console.log(err);
         }); 
     };
-    /* console.log(test); */
-
 }]);

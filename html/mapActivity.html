@@ -35,6 +35,13 @@
                         </button>
                         <!-- On peut ajouter une lien vers page du comte d'utilisateur-->
                     </div>
+                    <script>
+                            var url = window.location.toString();
+                            var email = url.slice(48);
+                            function redirect () {
+                                window.location.href = "userAccount.html#" + email;
+                            }
+                        </script>
                 </custom-marker>
                 <custom-marker id="marker-{{$index}}" ng-repeat="marker in vm.markers track by $index" position="{{marker.position}}">
                     <div>
