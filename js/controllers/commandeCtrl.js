@@ -20,6 +20,8 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         var url = window.location.toString();
         obj.id_user = url.slice(48);
         obj.dateDeLivraison = delaiDelIvraisonToMilisec(delaiDelIvraison);
+
+        obj.status = "en preparation";
         var newOrder = {
             "_id" : new Date(),
             obj
@@ -35,9 +37,7 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         /* Retourne date de livraison en milisec */
         var date = new Date();
         var currentTime = date.getTime();
-        console.log(currentTime);
         var dateDeLivraison = currentTime + delDeLivrMsec;
-        console.log(dateDeLivraison);
         return dateDeLivraison;
     }
 
