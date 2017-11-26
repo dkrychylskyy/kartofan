@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/userAccount.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/pouchdb/dist/pouchdb.min.js"></script>
     <script src="../node_modules/pouchdb/dist/pouchdb.find.js"></script>
@@ -21,7 +22,7 @@
     <title>Compte utilisateur</title>
 </head>
 
-<body ng-app="kartofan">
+<body ng-app="kartofan"  ng-controller="userCtrl as user" onload="user.info()">
     <div class="jumbotron jumbotron-billboard">
         <div class="img"></div>
         <div class="container">
@@ -33,22 +34,16 @@
             </div>
         </div>
     </div>
-    <div class="container" ng-controller="userCtrl as user">
-        <a href="javascript:void(0);" onclick="user.info()">test</a>
+    <div class="container" >
+        <a href="javascript:void(0);">test</a>
+        <a href="javascript:void(0);" ng-click="order()">testJq</a>
         <h2 class="h2">Votre compte d'utilisateur</h2>
-        <div ng-controller="commandeCtrl as commande">
-            <table class="table table-hover">
-                <th>Commande</th>
+        <div>
+            <table id="commandes" class="table table-hover">
+                <th>Commande du</th>
                 <th>Montant HT</th>
                 <th>Montant TTC</th>
                 <th>Status</th>
-                <tr id="commandes">
-                    <!-- <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td> -->
-                </tr>
-                
             </table>
         </div>
     </div>
