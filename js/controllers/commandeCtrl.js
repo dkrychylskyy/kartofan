@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUser', function commandeCtrl(localStorageService, $modal, currentUser) {
     commCtrl = this;
     commCtrl.commande = new Map();
@@ -19,7 +20,11 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         var url = window.location.toString();
         obj.id_user = url.slice(48);
         obj.dateDeLivraison = delaiDelIvraisonToMilisec(delaiDelIvraison);
-        console.log(obj);
+        var newOrder = {
+            "_id" : new Date(),
+            obj
+        };
+        db.put(newOrder);
         return obj;
     }
 
