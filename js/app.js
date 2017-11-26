@@ -1,4 +1,4 @@
-var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule'/* , 'pouchdb' */]);
+var kartofan = angular.module('kartofan', ['ngMap', 'googleplus', 'mgcrea.ngStrap', 'ngAnimate', 'LocalStorageModule']);
 
 kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
     GooglePlusProvider.init({
@@ -6,19 +6,6 @@ kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
        apiKey: 'AIzaSyCyoG1LdKWgZ2Ki4Hhye9aUhLL-vqK3hw4'
     });
 }]);
-
-/* kartofan.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-      templateUrl : "index.html"
-    })
-    .when("/subscribe", {
-      templateUrl : "../html/subscribe.html"
-    })
-    .otherwise("/");
-    }
-  ); */
-
 kartofan.config(function($popoverProvider) {
     angular.extend($popoverProvider.defaults, {
       placement: "bottom-left",
@@ -41,14 +28,3 @@ kartofan.config(function($popoverProvider) {
       .setPrefix('kartofan')
       .setNotify(true, true);
   });
-
-  kartofan.factory('currentUser', function() {
-    var currentUser = {};
-    currentUser.setter = function(newValue) {
-        currentUser.value = newValue;
-    };
-    currentUser.getter = function() {
-        return currentUser.value;
-    };
-    return currentUser;
-});
