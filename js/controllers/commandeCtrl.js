@@ -4,6 +4,7 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
     commCtrl.commande = new Map();
     /* Convert un Map en un objet classique  */
     function mapToObj(commande, delaiDelIvraison) {
+
         var obj = {};
         commande.forEach(function (v, k) {
             obj[k] = v;
@@ -12,6 +13,7 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         obj.id_user = url.slice(48);
         obj.dateDeLivraison = delaiDelIvraisonToMilisec(delaiDelIvraison);
         obj.dateCommande = dateDeCommande();
+        obj.status = "en preparation";
         var newOrder = {
             "_id" : new Date(),
             obj
@@ -27,9 +29,7 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         /* Retourne date de livraison en milisec */
         var date = new Date();
         var currentTime = date.getTime();
-        console.log(currentTime);
         var dateDeLivraison = currentTime + delDeLivrMsec;
-        console.log(dateDeLivraison);
         return dateDeLivraison;
     }
     function dateDeCommande() {
