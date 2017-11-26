@@ -17,6 +17,7 @@ kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $
             obj[k] = v;
         });
         obj.dateDeLivraison = delaiDelIvraisonToMilisec(delaiDelIvraison);
+        obj.status = "en preparation";
         return obj;
     }
 
@@ -27,9 +28,7 @@ kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $
         /* Retourne date de livraison en milisec */
         var date = new Date();
         var currentTime = date.getTime();
-        console.log(currentTime);
         var dateDeLivraison = currentTime + delDeLivrMsec;
-        console.log(dateDeLivraison);
         return dateDeLivraison;
     }
 
