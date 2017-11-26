@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../css/userAccount.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="../node_modules/pouchdb/dist/pouchdb.find.js"></script>
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <!-- <script src="../node_modules/angular-route/angular-route.js"></script> -->
     <script src="../node_modules/angular-strap/dist/angular-strap.min.js"></script>
     <script src="../node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
@@ -19,7 +21,7 @@
     <title>Compte utilisateur</title>
 </head>
 
-<body>
+<body ng-app="kartofan">
     <div class="jumbotron jumbotron-billboard">
         <div class="img"></div>
         <div class="container">
@@ -36,6 +38,8 @@
         <div ng-controller="commandeCtrl as commande">
             <table class="table table-hover">
                 <th>Commande</th>
+                <th>Montant HT</th>
+                <th>Montant TTC</th>
                 <th>Status</th>
                 <tr>
                     <td></td>
