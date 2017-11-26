@@ -1,4 +1,4 @@
-kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $modal) {
+kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUser', function commandeCtrl(localStorageService, $modal, currentUser) {
     commCtrl = this;
     commCtrl.commande = new Map();
     // commCtrl.commande.line = {};
@@ -11,12 +11,15 @@ kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $
     }
 
     /* Convert un Map en un objet classique  */
-    function mapToObj(aMap, delaiDelIvraison) {
+    function mapToObj(commande, delaiDelIvraison) {
         var obj = {};
-        aMap.forEach(function (v, k) {
+        commande.forEach(function (v, k) {
             obj[k] = v;
         });
+        var url = window.location.toString();
+        obj.id_user = url.slice(48);
         obj.dateDeLivraison = delaiDelIvraisonToMilisec(delaiDelIvraison);
+        console.log(obj);
         return obj;
     }
 
@@ -37,13 +40,12 @@ kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $
     function addCommandeInLocalStorage(params, delaiDelIvraison) {
         if (localStorageService.isSupported) {
             localStorageService.setPrefix('comm');
-            var key = genIdUniq();
             var commande = mapToObj(params, delaiDelIvraison);
-            localStorageService.set(key, commande);
-            
+            /* var key = genIdUniq();
+            localStorageService.set(key, commande); */
             showModal();
         }
-    }
+    } 
     
     /* Recupere le commande depuis controller */
     commCtrl.commander = function (commande, delaiDelIvraison) {
@@ -58,4 +60,4 @@ kartofan.controller('commandeCtrl', function commandeCtrl(localStorageService, $
         InvitModal.$promise.then(InvitModal.show);
         }
 
-    });
+    }]);

@@ -36,3 +36,14 @@ kartofan.config(function($popoverProvider) {
       .setPrefix('kartofan')
       .setNotify(true, true);
   });
+
+  kartofan.factory('currentUser', function() {
+    var currentUser = {};
+    currentUser.setter = function(newValue) {
+        currentUser.value = newValue;
+    };
+    currentUser.getter = function() {
+        return currentUser.value;
+    };
+    return currentUser;
+});
