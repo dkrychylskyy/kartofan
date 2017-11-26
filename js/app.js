@@ -21,7 +21,12 @@ kartofan.config(['GooglePlusProvider', function(GooglePlusProvider) {
 
 kartofan.config(function($popoverProvider) {
     angular.extend($popoverProvider.defaults, {
-      html: true
+      placement: "bottom-left",
+      html: true,
+      onShow: function () { 
+        this.placement = 'bottom-left';
+        this.viewport = 'ngmap';
+      }
     });
   });
 

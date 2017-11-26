@@ -39,8 +39,8 @@
                 <custom-marker id="marker-{{$index}}" ng-repeat="marker in vm.markers track by $index" position="{{marker.position}}">
                     <div>
                         <button type="button" class="btn btn-primary" aria-label="Left Align" on-mouseover="vm.mouseover()" data-placement="top-right"
-                            title="{{marker.titre}}"  data-animation="am-flip-x" data-trigger="click" html="true" data-template-url="popover/popover.demo.tpl.html"
-                            bs-popover>
+                            title="{{marker.titre}}" data-animation="am-flip-x" data-trigger="click"
+                            html="true" data-template-url="popover/popover.demo.tpl.html" bs-popover>
                             <!-- <span class="label label-primary" aria-hidden="true"> {{p.prix}}/{{p.delaiLivraison}}</span> -->
                             <span>{{marker.prix}} EUR | {{marker.delaiLivraison}} min</span>
                         </button>

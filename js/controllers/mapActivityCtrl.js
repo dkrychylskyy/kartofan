@@ -3,10 +3,10 @@ kartofan.controller('mapActivityCtrl', ['NgMap', '$modal', '$popover', '$scope',
     var mapCenter = [43.643719, 1.388390];
     var vm = this;
     NgMap.getMap().then(function (map) {
-        console.log("map center : " + map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
-        console.log('style', map.style);
+        // console.log("map center : " + map.getCenter());
+        // console.log('markers', map.markers);
+        // console.log('shapes', map.shapes);
+        // console.log('style', map.style);
     });
 
     /* Creation menu */
@@ -69,4 +69,7 @@ vm.markers.marker7 = new Restauant(7, [43.62895134, 1.39496066], "La Faim des Ha
 vm.markers.marker8 = new Restauant(8, [43.64537062, 1.40376446], "La Faim des Haricots", "p", "../img/rest8.jpg", 9, 19, menu);
 vm.markers.marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Haricots", "r", "../img/rest9.jpg", 5, 24, menu);
 vm.markers.marker10 = new Restauant(10, [43.62853439, 1.38851422], "La Faim des Haricots", "p", "../img/rest10.jpg", 10, 15, menu);
+
+// console.log(vm.markers);
+
 }]);

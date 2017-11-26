@@ -13,6 +13,7 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
 
     /* Convert un Map en un objet classique  */
     function mapToObj(commande, delaiDelIvraison) {
+
         var obj = {};
         commande.forEach(function (v, k) {
             obj[k] = v;
