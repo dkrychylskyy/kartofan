@@ -15,7 +15,6 @@
     <script src="../node_modules/ngmap/build/scripts/ng-map.js"></script>
     <script type="text/javascript" src="../js/kartofan.gen.js"></script>
     <script src="../bower_components/angular-google-plus/src/angular-google-plus.js"></script>
-    <!-- <script src="../node_modules/angular-route/angular-route.js"></script> -->
     <script src="../node_modules/angular-strap/dist/angular-strap.min.js"></script>
     <script src="../node_modules/angular-strap/dist/angular-strap.tpl.min.js"></script>
     <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
@@ -51,22 +50,13 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="javascript:void(0);" ng-click="login()">Connectez-vous avec Google</a>
-                                </div>
-                                 <!-- <a href="javascript:void(0);" ng-click="logout()">Déconnection</a> -->
-                                 <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">Se souvenir de moi</label>
-                                </div>
-
+                                    <a href="javascript:void(0);" ng-click="login()" class="btn btn-primary">Connectez-vous avec Google</a></br>
+                                </div></br>
                                 <div class="form-group sign-btn">
                                     <a class="btn btn-primary" ng-click="connexion.connect()" href="javascript:void(0);">Connexion</a><br/>
                                     <br/>
-                                    <a class="btn btn-primary" href="#" class="forgot">Mot de passe oublié ?</a>
-                                    <br>
                                     <strong>Nouveau sur Kartofan ?</strong>
-                                    <br>
-                                    <a href="subscribe.html" id="flip-btn" class="signup signup_link">Créer un nouveau compte</a>
+                                    <a href="subscribe.html" id="flip-btn" class="btn btn-primary">Créer un nouveau compte</a><br/>
                                 </div>
                             </form>
                         </div>

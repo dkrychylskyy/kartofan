@@ -1,12 +1,13 @@
-kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 'currentUser', function ($scope, GooglePlus, localStorageService, currentUser) {
+kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', function ($scope, GooglePlus, localStorageService) {
     auth = this;
     $scope.login = function () {
         GooglePlus.login().then(function (authResult) {
             console.log(authResult);
 
             GooglePlus.getUser().then(function (user) {
-                console.log(user);
-                localStorageService.set(user.id, user);
+                var mail = user.email;
+                var redirect = "mapactivity.html#" + mail;
+                window.location.href = redirect;
             });
         }, function (err) {
             console.log(err);
@@ -17,7 +18,7 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 
             fields: ['_id', 'Mot de passe']
         }
     });
-    auth.connect = function() {
+    auth.connect = function () {
         var email = document.getElementById("emailfield").value;
         var password = document.getElementById("passwordfield").value;
         var verifconnect = db.find({
@@ -29,13 +30,12 @@ kartofan.controller('AuthCtrl', ['$scope', 'GooglePlus', 'localStorageService', 
             if (result.bookmark !== "nil") {
                 var redirect = "mapactivity.html#" + email;
                 window.location.href = redirect;
-                //window.location.assign("mapactivity.html");
                 return currentUser;
             } else {
                 alert('Adresse mail ou mot de passe erroné.');
             }
         }).catch(function (err) {
             console.log(err);
-        }); 
+        });
     };
 }]);

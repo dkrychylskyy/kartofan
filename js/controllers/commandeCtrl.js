@@ -2,15 +2,6 @@
 kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUser', function commandeCtrl(localStorageService, $modal, currentUser) {
     commCtrl = this;
     commCtrl.commande = new Map();
-    // commCtrl.commande.line = {};
-
-    /* Creation un ID unique = int en milisec */
-    function genIdUniq() {
-        var date = new Date();
-        var id = date.valueOf();
-        return id;
-    }
-
     /* Convert un Map en un objet classique  */
     function mapToObj(commande, delaiDelIvraison) {
         var obj = {};
@@ -60,8 +51,6 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         if (localStorageService.isSupported) {
             localStorageService.setPrefix('comm');
             var commande = mapToObj(params, delaiDelIvraison);
-            /* var key = genIdUniq();
-            localStorageService.set(key, commande); */
             showModal();
         }
     } 
