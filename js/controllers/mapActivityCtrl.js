@@ -1,4 +1,4 @@
-kartofan.controller('mapActivityCtrl', function mapActivityCtrl(NgMap, $modal, $popover, $scope) {
+kartofan.controller('mapActivityCtrl', ['NgMap', '$modal', '$popover', '$scope', 'currentUser', function mapActivityCtrl(NgMap, $modal, $popover, $scope, currentUser) {
     'use strict';
     var mapCenter = [43.643719, 1.388390];
     var vm = this;
@@ -70,4 +70,4 @@ vm.markers.marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Ha
 vm.markers.marker10 = new Restauant(10, [43.62853439, 1.38851422], "La Faim des Haricots", "p", "../img/rest10.jpg", 10, 15);
 
 
-});
+}]);
