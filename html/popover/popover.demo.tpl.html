@@ -6,7 +6,40 @@
     </div>
     <div ng-controller="commandeCtrl as commande">
       <form id="form" name="form">
-        <div ng-repeat="prod in marker.menu track by $index" ng-controller="popupCtrl as popup">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th><h5>Titre</h5></th>
+              <th><h5>Prix</h5></th>
+              <th><h5>Qte</h5></th>
+              <th><h5>Somme</h5></th>
+              <!-- <th>...</th> -->
+            </tr>
+          </thead>
+          <tbody ng-repeat="prod in marker.menu track by $index" ng-controller="popupCtrl as popup">
+            <td>
+              <h5>{{prod.titre}}</h5>
+            </td>
+            <td><h5>{{prod.prix | currency:"€": 2}}</h5></td>
+            <td>
+              <span ng-hide="popup.qte == 0"><h5>{{popup.qte}}</h5></span>
+            </td>
+            <td>
+              <span ng-hide="popup.qte == 0"><h5>{{popup.qte * prod.prix | currency:"€": 2}}</h5></span>
+            </td>
+            <td>
+              <div>
+                <button type="button" class="btn btn-xs btn-success" name="plus" ng-click="popup.plus(commande.commande, prod.titre, prod.prix)">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-xs btn-danger" name="plus" ng-click="popup.minus(commande.commande, prod.titre, prod.prix)">
+                  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                </button>
+              </div>
+            </td>
+          </tbody>
+        </table>
+        <!-- <div ng-repeat="prod in marker.menu track by $index" ng-controller="popupCtrl as popup">
           <div>
             {{prod.titre}} : {{prod.prix | currency:"€": 2}}
             <input type="number" name="popup.qte" ng-model="qte" ng-hide="true"></input>
@@ -15,11 +48,11 @@
             <button type="button" name="plus" ng-click="popup.minus(commande.commande, prod.titre, prod.prix)">-</button>
             <span>{{popup.qte * prod.prix}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="form-action">
           <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
           <!-- <button type="submit" class="btn btn-primary" ng-click="popover.saved=true;$hide()">Save changes</button> -->
-          <button type="submit" class="btn btn-primary" ng-click="commande.commander(commande.commande, marker.delaiLivraison)">Commander</button>
+          <button type="submit" class="btn btn-primary" ng-click="commande.commander(commande.commande, marker.delaiLivraison);$hide()">Commander</button>
         </div>
       </form>
     </div>
