@@ -23,11 +23,18 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
+<!--         <header class="jumbotron jumbotron-billboard">
+                <div class="img"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Kartofan</h1>
+                            <p>Tout simplement</p>
+                        </div>
+                    </div>
+                </div>
+            </header> -->
     <div class="container" ng-app="kartofan">
-
         <div id="map" ng-controller="mapActivityCtrl as vm">
             <div class="filters">
 
@@ -57,7 +64,7 @@
                 <!-- Home marker -->
                 <custom-marker name="home" position="{{vm.currentPosition.position}}">
                     <div>
-                        <button type="button" class="btn btn-primary" aria-label="Left Align" data-placement="top-right" title="{{vm.currentPosition.position}}"
+                        <button type="button" onclick="redirect()" class="btn btn-primary" aria-label="Left Align" data-placement="top-right" title="{{vm.currentPosition.position}}"
                             data-content="{{vm.zoom}}" data-animation="am-flip-x" data-trigger="click" bs-popover>
                             <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
                         </button>
