@@ -1,4 +1,8 @@
-kartofan.controller('mapActivityCtrl', ['NgMap', '$modal', '$popover', '$scope', 'currentUser', '$filter', function mapActivityCtrl(NgMap, $modal, $popover, $scope, currentUser, $filter) {
+
+kartofan.controller('mapActivityCtrl', ['NgMap', '$modal', '$popover', '$scope', '$filter', function mapActivityCtrl(NgMap, $modal, $popover, $scope, $filter) {
+
+
+
     'use strict';
     var mapCenter = [43.643719, 1.388390];
     var vm = this;

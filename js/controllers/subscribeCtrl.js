@@ -26,12 +26,6 @@ kartofan.controller('subscribeCtrl', function subscribeCtrl(localStorageService)
             "Mot de passe" : sub.password
         };
         db.put(newUserDatabase);
-        /* function genIdUniq() {
-            var date = new Date();
-            var id = date.valueOf();
-            return id;
-        }
-        localStorageService.set(genIdUniq(), newUser); */
         window.location.assign("index.html");
     };
 });
