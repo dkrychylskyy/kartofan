@@ -8,7 +8,7 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="1012913286363-n94npc63kf6gqvepbinl0v8lhb8mbqiu.apps.googleusercontent.com">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/subscribe.css">    
+    <link rel="stylesheet" href="../css/subscribe.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/pouchdb/dist/pouchdb.min.js"></script>
@@ -26,6 +26,12 @@
 </head>
 
 <body ng-app="kartofan">
+    <div class="page-header">
+        <h1>Kartofan
+            <small>Tout simplement</small>
+        </h1>
+    </div>
+
     <div class="subscribe-screen"></div>
     <div class="container" ng-controller="subscribeCtrl as subscribe">
         <h1>Enregistrement</h1>
@@ -76,7 +82,7 @@
             </div>
         </div>
     </div>
-    <br>    
+    <br>
 </body>
 
 </html>
