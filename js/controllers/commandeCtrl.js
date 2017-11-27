@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUser', function commandeCtrl(localStorageService, $modal, currentUser) {
+kartofan.controller('commandeCtrl', ['localStorageService', '$modal', function commandeCtrl(localStorageService, $modal) {
     commCtrl = this;
     commCtrl.commande = new Map();
     /* Convert un Map en un objet classique  */
@@ -61,7 +61,6 @@ kartofan.controller('commandeCtrl', ['localStorageService', '$modal', 'currentUs
         addCommandeInLocalStorage(commande, delaiDelIvraison);
         return commCtrl.commande;
     };
-    
     var InvitModal = $modal({ templateUrl: '../html/templates/invitModal.tpl.html', show: false });
     // Show when some event occurs (use $promise property to ensure the template has been loaded)
     function showModal() {
