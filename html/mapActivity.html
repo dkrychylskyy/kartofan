@@ -23,41 +23,42 @@
 </head>
 
 <body>
-<!--         <header class="jumbotron jumbotron-billboard">
-                <div class="img"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1>Kartofan</h1>
-                            <p>Tout simplement</p>
-                        </div>
-                    </div>
-                </div>
-            </header> -->
+        <div class="page-header">
+            <h1>Kartofan
+                <small>Tout simplement</small>
+            </h1>
+    </div>
     <div class="container" ng-app="kartofan">
         <div id="map" ng-controller="mapActivityCtrl as vm">
-            <div class="filters">
-
-                <label for="typeleSelect">Select Type</label>
-                <select name="typeleSelect" ng-model="vm.filter.type" ng-change="vm.filterType()">
-                    <option value="">Tout</option>
-                    <option ng-repeat="type in vm.types" value="{{type}}">{{type}}</option>
-                </select>
-                <select name="filter-delaiDeLivraison" ng-model="vm.filter.delaiLivraison" ng-change="vm.filterLivraison()">
-                    <option value="10">10 min</option>
-                    <option value="15">15 min</option>
-                    <option value="20">20 min</option>
-                    <option value="25">25 min</option>
-                </select>
-                <!-- <input type="number" name="" id="" ng-model="vm.filter.delaiLivraison" ng-keyup="vm.filterLivraison()" placeholder="livr"> -->
-                <select name="filter-prix" ng-model="vm.filter.prix" ng-change="vm.filterPrix()">
-                        <option value="10">10 €</option>
-                        <option value="15">15 €</option>
-                        <option value="20">20 €</option>
-                        <option value="25">25 €</option>
-                    </select>
-                <!-- <input type="number" name="" id="" ng-model="vm.filter.prix" ng-keyup="vm.filterPrix()" placeholder="prix"> -->
-                <button type="reset" ng-click="vm.clearAllFilters()">Clear les filtres</button>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Filtres</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="filters">
+                        <label for="typeleSelect">Type</label>
+                        <select name="typeleSelect" ng-model="vm.filter.type" ng-change="vm.filterType()">
+                            <option value="">Tout</option>
+                            <option ng-repeat="type in vm.types" value="{{type}}">{{type}}</option>
+                        </select>
+                        <label for="filter-delaiDeLivraison">Delai de livraison</label>
+                        <select data-header="Select a condiment" name="filter-delaiDeLivraison" ng-model="vm.filter.delaiLivraison" ng-change="vm.filterLivraison()">
+                            <option value="10">10 min</option>
+                            <option value="15">15 min</option>
+                            <option value="20">20 min</option>
+                            <option value="25">25 min</option>
+                        </select>
+                        <label for="filter-prix">Prix</label>
+                        <select name="filter-prix" ng-model="vm.filter.prix" ng-change="vm.filterPrix()">
+                            <option value="10">10 €</option>
+                            <option value="15">15 €</option>
+                            <option value="20">20 €</option>
+                            <option value="25">25 €</option>
+                        </select>
+                        <!-- <input type="number" name="" id="" ng-model="vm.filter.prix" ng-keyup="vm.filterPrix()" placeholder="prix"> -->
+                        <button type="button" class="btn btn-danger" type="reset" ng-click="vm.clearAllFilters()">Clear les filtres</button>
+                    </div>
+                </div>
             </div>
             <ng-map id="ngmap" center="{{vm.center}}" zoom="{{vm.zoom}}" default-style="false">
 
@@ -71,12 +72,12 @@
                         <!-- On peut ajouter une lien vers page du comte d'utilisateur-->
                     </div>
                     <script>
-                            var url = window.location.toString();
-                            var email = url.slice(48);
-                            function redirect () {
-                                window.location.href = "userAccount.html#" + email;
-                            }
-                        </script>
+                        var url = window.location.toString();
+                        var email = url.slice(48);
+                        function redirect() {
+                            window.location.href = "userAccount.html#" + email;
+                        }
+                    </script>
                 </custom-marker>
                 <!-- End home marker -->
                 <!-- Markers -->
@@ -84,8 +85,8 @@
                 <custom-marker id="marker-{{$index}}" ng-repeat="marker in vm.markers track by $index" position="{{marker.position}}">
                     <div>
                         <button type="button" class="btn btn-success" aria-label="Left Align" on-mouseover="vm.mouseover()" data-placement="top-right"
-                            title='{{marker.titre}} / {{marker.delaiLivraison}}min / {{marker.prix}}€' data-animation="am-flip-x" data-trigger="click" html="true" data-template-url="popover/popover.demo.tpl.html"
-                            bs-popover>
+                            title='{{marker.titre}} / {{marker.delaiLivraison}}min / {{marker.prix}}€' data-animation="am-flip-x"
+                            data-trigger="click" html="true" data-template-url="popover/popover.demo.tpl.html" bs-popover>
                             <span>{{marker.prix}} EUR | {{marker.delaiLivraison}} min</span>
                             <span>{{marker.type}}</span>
                         </button>
@@ -96,9 +97,6 @@
             </ng-map>
             </div>
         </div>
-        <footer>
-
-        </footer>
 </body>
 
 </html>

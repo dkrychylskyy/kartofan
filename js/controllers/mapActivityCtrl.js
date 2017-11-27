@@ -68,13 +68,13 @@ kartofan.controller('mapActivityCtrl', ['NgMap', '$modal', '$popover', '$scope',
     var marker2 = new Restauant(2, [43.63758, 1.38399315], "Le Carrelet", "resto", "../img/rest2.jpg", 20, 10, menu);
     var marker3 = new Restauant(3, [43.64565009, 1.40561622], "La Faim des Haricots", "pizza", "../img/rest3.jpg", 16, 10, menu);
     var marker4 = new Restauant(4, [43.64232286, 1.36425325], "La Faim des Haricots", "resto", "../img/rest4.jpg", 13, 15, menu);
-    var marker5 = new Restauant(5, [43.64679373, 1.38189499], "La Faim des Haricots", "pizza", "../img/rest5.jpg", 8, 20, menu);
+    // var marker5 = new Restauant(5, [43.64679373, 1.38189499], "La Faim des Haricots", "pizza", "../img/rest5.jpg", 8, 20, menu);
     var marker6 = new Restauant(6, [43.64853678, 1.39066706], "La Faim des Haricots", "resto", "../img/rest6.jpg", 10, 15, menu);
     var marker7 = new Restauant(7, [43.62895134, 1.39496066], "La Faim des Haricots", "resto", "../img/rest7.jpg", 12, 25, menu);
-    var marker8 = new Restauant(8, [43.64537062, 1.40376446], "La Faim des Haricots", "pizza", "../img/rest8.jpg", 9, 20, menu);
-    var marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Haricots", "resto", "../img/rest9.jpg", 5, 25, menu);
+    // var marker8 = new Restauant(8, [43.64537062, 1.40376446], "La Faim des Haricots", "pizza", "../img/rest8.jpg", 9, 20, menu);
+    // var marker9 = new Restauant(9, [43.64212741, 1.39994713], "La Faim des Haricots", "resto", "../img/rest9.jpg", 5, 25, menu);
     var marker10 = new Restauant(10, [43.62853439, 1.38851422], "La Faim des Haricots", "q", "../img/rest10.jpg", 10, 15, menu);
-    vm.markersList.push(marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10);
+    vm.markersList.push(marker1, marker2, marker3, marker4, marker6, marker7, marker10);
 
     // vm.markers.marker1 = new Restauant(1, [43.65095096, 1.38046211], "HolaPizza", "p", "../img/rest1.jpg", 10, 15, menu);
     // vm.markers.marker2 = new Restauant(2, [43.63758, 1.38399315], "Le Carrelet", "r", "../img/rest2.jpg", 20, 18, menu);
