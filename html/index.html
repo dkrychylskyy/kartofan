@@ -24,12 +24,12 @@
 </head>
 
 <body ng-app="kartofan" class="main">
-        <div class="page-header">
-                <h1>Kartofan
-                    <small>Tout simplement</small>
-                </h1>
-        </div>
-    
+    <div class="page-header">
+        <h1>Kartofan
+            <small>Tout simplement</small>
+        </h1>
+    </div>
+
     <div class="login-screen"></div>
     <div class="login-center">
         <div class="container min-height" style="margin-top: 20px;">
@@ -55,14 +55,18 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div>
-                                    <a href="javascript:void(0);" ng-click="login()" class="btn btn-primary">Connectez-vous avec Google</a></br>
-                                </div></br>
                                 <div class="form-group sign-btn">
-                                    <a class="btn btn-primary" ng-click="connexion.connect()" href="javascript:void(0);">Connexion</a><br/>
+                                    <a class="btn btn-primary" ng-click="connexion.connect()" href="javascript:void(0);">Connexion</a>
+                                    <br/>     
+                                    <br/>
+                                    <div>
+                                        <a href="javascript:void(0);" ng-click="login()" class="btn btn-primary">Connectez-vous avec Google</a>
+                                    </div>
+                                    </br>
                                     <br/>
                                     <strong>Nouveau sur Kartofan ?</strong>
-                                    <a href="subscribe.html" id="flip-btn" class="btn btn-primary">Créer un nouveau compte</a><br/>
+                                    <a href="subscribe.html" id="flip-btn" class="btn btn-primary">Créer un nouveau compte</a>
+                                    <br/>
                                 </div>
                             </form>
                         </div>
@@ -75,4 +79,3 @@
 </body>
 
 </html>
-
