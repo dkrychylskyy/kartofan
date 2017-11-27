@@ -23,7 +23,7 @@
 </head>
 
 <body ng-app="kartofan"  ng-controller="userCtrl as user" onload="user.info()">
-    <div class="jumbotron jumbotron-billboard">
+    <header class="jumbotron jumbotron-billboard">
         <div class="img"></div>
         <div class="container">
             <div class="row">
@@ -33,17 +33,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
     <div class="container" >
-        <a href="javascript:void(0);" ng-click="order()" class="btn btn-primary">Votre Historique de commande</a>
+        <!-- <a href="javascript:void(0);" ng-click="order()" class="btn btn-primary">Votre Historique de commande</a> -->
         <h2 class="h2">Votre compte d'utilisateur</h2>
         <div>
             <table id="commandes" class="table table-hover">
                 <th>Commande du</th>
                 <th>Montant HT</th>
-                <th>Montant TTC</th>
-                <th>Status</th>
-                <!-- <th>Temps livraison</th>  -->               
+                <th>Montant TTC</th>            
             </table>
         </div>
     </div>

@@ -28,7 +28,6 @@
                 <small>Tout simplement</small>
             </h1>
     </div>
-
     <div class="container" ng-app="kartofan">
         <div id="map" ng-controller="mapActivityCtrl as vm">
             <div class="panel panel-default">
@@ -66,7 +65,7 @@
                 <!-- Home marker -->
                 <custom-marker name="home" position="{{vm.currentPosition.position}}">
                     <div>
-                        <button type="button" class="btn btn-primary" aria-label="Left Align" data-placement="top-right" title="{{vm.currentPosition.position}}"
+                        <button type="button" onclick="redirect()" class="btn btn-primary" aria-label="Left Align" data-placement="top-right" title="{{vm.currentPosition.position}}"
                             data-content="{{vm.zoom}}" data-animation="am-flip-x" data-trigger="click" bs-popover>
                             <span class="glyphicon glyphicon glyphicon-home" aria-hidden="true"></span>
                         </button>
