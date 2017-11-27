@@ -30,17 +30,29 @@
     <div class="container" ng-app="kartofan">
 
         <div id="map" ng-controller="mapActivityCtrl as vm">
-            <div id="selectType" style="background-color:azure; margin: 2em;">
-                <form>
-                    <label for="typeleSelect">Select Type</label>
-                    <select name="typeleSelect" ng-model="vm.filter.type">
-                        <option ng-repeat="type in vm.types" value="type">{{type}}</option>
+            <div class="filters">
+
+                <label for="typeleSelect">Select Type</label>
+                <select name="typeleSelect" ng-model="vm.filter.type" ng-change="vm.filterType()">
+                    <option value="">Tout</option>
+                    <option ng-repeat="type in vm.types" value="{{type}}">{{type}}</option>
+                </select>
+                <select name="filter-delaiDeLivraison" ng-model="vm.filter.delaiLivraison" ng-change="vm.filterLivraison()">
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                    <option value="20">20 min</option>
+                    <option value="25">25 min</option>
+                </select>
+                <!-- <input type="number" name="" id="" ng-model="vm.filter.delaiLivraison" ng-keyup="vm.filterLivraison()" placeholder="livr"> -->
+                <select name="filter-prix" ng-model="vm.filter.prix" ng-change="vm.filterPrix()">
+                        <option value="10">10 €</option>
+                        <option value="15">15 €</option>
+                        <option value="20">20 €</option>
+                        <option value="25">25 €</option>
                     </select>
-                </form>
+                <!-- <input type="number" name="" id="" ng-model="vm.filter.prix" ng-keyup="vm.filterPrix()" placeholder="prix"> -->
+                <button type="reset" ng-click="vm.clearAllFilters()">Clear les filtres</button>
             </div>
-            <input type="text" name="" id="" ng-model="vm.filter.type" ng-keyup="vm.filterType()" placeholder="type">
-            <input type="number" name="" id="" ng-model="vm.filter.delaiLivraison" ng-keyup="vm.filterLivraison()" placeholder="livr">
-            <input type="number" name="" id="" ng-model="vm.filter.prix" ng-keyup="vm.filterPrix()" placeholder="prix">
             <ng-map id="ngmap" center="{{vm.center}}" zoom="{{vm.zoom}}" default-style="false">
 
                 <!-- Home marker -->
@@ -59,7 +71,7 @@
                 <custom-marker id="marker-{{$index}}" ng-repeat="marker in vm.markers track by $index" position="{{marker.position}}">
                     <div>
                         <button type="button" class="btn btn-success" aria-label="Left Align" on-mouseover="vm.mouseover()" data-placement="top-right"
-                            title="{{marker.titre}}" data-animation="am-flip-x" data-trigger="click" html="true" data-template-url="popover/popover.demo.tpl.html"
+                            title='{{marker.titre}} / {{marker.delaiLivraison}}min / {{marker.prix}}€' data-animation="am-flip-x" data-trigger="click" html="true" data-template-url="popover/popover.demo.tpl.html"
                             bs-popover>
                             <span>{{marker.prix}} EUR | {{marker.delaiLivraison}} min</span>
                             <span>{{marker.type}}</span>
